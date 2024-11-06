@@ -7,10 +7,9 @@
 import { StringKeyValueType } from '../types';
 
 export const socialLinks: StringKeyValueType = {
-  facebook: 'https://www.facebook.com/vatsalsinghkv',
   twitter: 'https://x.com/KMarkhoor',
   github: 'https://github.com/Arbab-Mustafa',
-  linkedin: ' https://www.linkedin.com/in/arbabmustafa/',
+  linkedin: 'https://www.linkedin.com/in/arbabmustafa/',
 };
 
 export const author = {
@@ -19,9 +18,9 @@ export const author = {
 };
 
 export const seoData = {
-  title: ' Arbab Mustafa |  Full Stack Engineer',
+  title: ' Arbab Mustafa | Full Stack Engineer ',
   description:
-    'Vatsal Singh is a front-end developer who specializes in building (and occasionally designing) exceptional visual interfaces.',
+    'Arbab Mustafa is Software Engineer and Full Stack Developer. He is a graduate of UET   and has been working in the software industry for over 2 years. He has worked on various projects and has experience in frontend and backend development. He is passionate about building web applications and solving problems. He is proficient in JavaScript, TypeScript, React, Node.js, Express.js, MongoDB, and other web technologies. He is always looking for new opportunities and challenges. He is open to collaborations and projects. Feel free to reach out to him .',
   author: author.name,
   image:
     ' https://www.arbabmustafa.com/_next/image?url=%2Fprofile.jpeg&w=256&q=95',
@@ -69,5 +68,14 @@ export const seoData = {
     'uet taxila reactjs developer',
     'uet taxila javascript developer',
     'uet',
+    'uet student',
+    'freealncer web developer',
+    'freelancer software engineer',
+    'freelancer frontend developer',
+    'freelancer fullstack developer',
+    'freelancer react developer',
+    'freelancer reactjs developer',
+    'freelancer javascript developer',
+    'freelancer',
   ],
 };
