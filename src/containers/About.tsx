@@ -26,31 +26,23 @@ const About = () => {
           <p>
             Hi, my name is Arbab, a Software Engineering student at{' '}
             <Link
-              href="https://bhu.ac.in/"
+              href="https://www.uettaxila.edu.pk/"
               target="_blank"
               className="text-accent"
             >
               UET
             </Link>
-            .<br /> I'm an Artist as well as crazy full stack web developer who
-            wants to explore every tech stack.
+            .<br /> I'm Experieced & Certified full stack developer.Also ,
+            learning new technologies and frameworks is my passion.
           </p>
           <p>
-            Fast-forward to today, and I've had the privilege of working at a
-            start-up -{' '}
-            <Link
-              href="https://www.pixelwand.live/"
-              target="_blank"
-              className="text-accent"
-            >
-              Pixelwand
-            </Link>
-            .
+            {' '}
+            From the outset, I was captivated by the power of code to transform
+            ideas into reality. My academic experience has provided me with a
+            solid foundation in software principles, while also allowing me to
+            dive into the latest advancements in Software Fields .
           </p>
-          <p>
-            My main focus these days is learning mobile development and finding
-            a decent job.
-          </p>
+          <p></p>
 
           {list && (
             <>
