@@ -1,34 +1,52 @@
 'use client';
-import Flex from '@/components/base/Flex';
-import { Logo } from '@/components/icons';
 
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ANIMATION_DURATION = 1.5;
-const LoadingScreen = () => {
+
+const LoadingScreen: React.FC = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, ANIMATION_DURATION * 1000); // Converts to milliseconds
+
+    return () => clearTimeout(timer); // Cleanup timer on unmount
+  }, []);
+
+  if (isLoaded) return null; // Remove loading screen after animation
+
   return (
-    <Flex
-      as={motion.div}
-      direction="column"
-      justify="center"
-      align="center"
-      css={{
+    <motion.div
+      style={{
         inset: 0,
         position: 'fixed',
-        bg: '$backgroundPrimary',
-        zIndex: '$6',
+        backgroundColor: 'var(--backgroundPrimary)', // Replace with actual color if needed
+        zIndex: 6,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
+      initial={{ opacity: 1 }}
+      animate={{
+        opacity: 0,
+        x: '-50vw', // Animates the x position to the left
+        y: '-50vh', // Animates the y position towards the top
+      }}
+      transition={{ duration: ANIMATION_DURATION }}
     >
       <motion.div
-        initial={{ opacity: 0.3, filter: 'blur(15px)' }}
-        animate={{ opacity: 1, filter: 'blur(0px)' }}
+        initial={{ opacity: 0.3, scale: 1.8 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: ANIMATION_DURATION }}
-        layoutId="logo"
       >
-        <Logo style={{ transform: 'scale(1.8)' }} />
+        <h1 className="relative text-2xl capitalize font-signature text-accent group top-1">
+          <span className="text-[#72A230]">Arbab Mustafa</span>
+        </h1>
       </motion.div>
-    </Flex>
+    </motion.div>
   );
 };
 
