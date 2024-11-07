@@ -9,8 +9,8 @@ body {
 @layer base {
   /* Color variables for future use */
   :root {
-    --color-bg: #ffffff;
-    --color-bg-secondary: #f5f5f5;
+    --color-bg: rgba(255, 255, 255, 0.6);
+    --color-bg-secondary: rgba(255, 255, 255, 0.6);
     --color-accent: #86c232;
     --color-accent-light: rgba(134, 194, 50, 0.1);
     --color-accent-torch: rgba(134, 194, 50, 0.15);
