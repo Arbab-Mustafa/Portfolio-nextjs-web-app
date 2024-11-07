@@ -1,41 +1,78 @@
+// Experience.tsx
 'use client';
 
-import { experienceSection } from '../lib/content/experience';
-import { motion } from 'framer-motion';
+import { useSpring, animated } from '@react-spring/web';
+import 'react-vertical-timeline-component/style.min.css';
 
-const Experience = () => {
+const experiences = [
+  {
+    date: 'Jan 2020 - Present',
+    title: 'Software Engineer',
+    companyName: 'Tech Solutions',
+    icon: '/path/to/icon.png', // Replace with the path to your icon image
+    points: [
+      'Developed and maintained web applications',
+      'Collaborated with cross-functional teams to define project scope',
+      'Improved application performance by 30%',
+    ],
+  },
+  // Add more experiences as needed
+];
+
+const ExperienceCard = ({ experience }) => {
+  // Create a spring for smooth scrolling animation
+  const animation = useSpring({
+    from: { opacity: 0, transform: 'translateY(20px)' },
+    to: { opacity: 1, transform: 'translateY(0px)' },
+    config: { tension: 200, friction: 20 },
+  });
+
   return (
-    <motion.section id="experience" className="max-w-3xl py-32 mx-auto">
-      <h2 className="heading-secondary">{experienceSection.title}</h2>
-      <div className="mt-8 space-y-8">
-        {experienceSection.experiences.map((experience, index) => (
-          <div key={index} className="p-6 border rounded-lg shadow-md">
-            <h3 className="text-2xl font-semibold">
-              <a
-                href={experience.companyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                {experience.company}
-              </a>
+    <animated.div style={animation}>
+      <div
+        style={{
+          border: '1px solid #232631',
+          padding: '16px',
+          borderRadius: '8px',
+          marginBottom: '16px',
+          background: '#1d1836',
+          color: '#fff',
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <img
+            src={experience.icon}
+            alt={`${experience.companyName} icon`}
+            style={{ width: '40px', height: '40px', marginRight: '8px' }}
+          />
+          <div>
+            <h3 style={{ fontSize: '20px', margin: '0' }}>
+              {experience.title}
             </h3>
-            <p className="text-lg text-gray-600">{experience.role}</p>
-            <p className="mt-2 text-sm text-gray-500">
-              {experience.started} - {experience.upto}
+            <p style={{ fontSize: '16px', color: '#bbb', margin: '0' }}>
+              {experience.companyName}
             </p>
-            <ul className="mt-4 space-y-2">
-              {experience.tasks.map((task, taskIndex) => (
-                <li key={taskIndex} className="text-sm text-gray-700">
-                  • {task}
-                </li>
-              ))}
-            </ul>
           </div>
-        ))}
+        </div>
+        <p style={{ fontSize: '14px', color: '#aaa' }}>{experience.date}</p>
+        <ul style={{ paddingLeft: '20px', marginTop: '8px' }}>
+          {experience.points.map((point, index) => (
+            <li key={index} style={{ fontSize: '14px', color: '#ddd' }}>
+              {point}
+            </li>
+          ))}
+        </ul>
       </div>
-    </motion.section>
+    </animated.div>
   );
 };
+
+const Experience = () => (
+  <div style={{ marginTop: '20px' }}>
+    {experiences.map((experience, index) => (
+      <ExperienceCard key={index} experience={experience} />
+    ))}
+  </div>
+);
 
 export default Experience;

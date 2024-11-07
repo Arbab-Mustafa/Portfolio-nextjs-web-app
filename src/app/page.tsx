@@ -1,5 +1,4 @@
 'use client';
-
 import LoadingScreen from '@/components/loading';
 import StarsCanvas from '@/components/Stars';
 import {
