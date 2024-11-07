@@ -42,13 +42,13 @@ const Home: NextPage = () => {
         <Hero />
         <StarsCanvas />
         <About />
-        <StarsCanvas />
+
         <Skills />
+
         <Experience />
         <FeaturedProjects />
         <Projects />
         <Contact />
-        <StarsCanvas />
       </Layout>
     </>
   );

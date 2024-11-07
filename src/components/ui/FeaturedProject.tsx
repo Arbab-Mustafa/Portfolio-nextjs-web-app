@@ -203,20 +203,20 @@ const FeaturedProject = ({
                 align === 'left' && 'lg:justify-start'
               )}
             >
-              <a
+              <Link
                 href={repo}
                 className="block duration-200 hover:text-accent"
                 target="_blank"
               >
                 <Icon icon="tabler:brand-github" width={22} height={22} />
-              </a>
-              <a
+              </Link>
+              <Link
                 href={url}
                 className="block duration-200 hover:text-accent"
                 target="_blank"
               >
                 <Icon icon="ci:external-link" width={24} height={24} />
-              </a>
+              </Link>
             </div>
           )}
         </div>

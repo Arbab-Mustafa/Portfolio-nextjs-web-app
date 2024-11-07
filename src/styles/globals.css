@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  cursor: pointer;
+}
+
 @layer base {
   /* Color variables for future use */
   :root {
