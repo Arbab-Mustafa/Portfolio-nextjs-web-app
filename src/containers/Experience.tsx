@@ -1,8 +1,8 @@
 // Experience.tsx
 'use client';
 
-import { useSpring, animated } from '@react-spring/web';
 import 'react-vertical-timeline-component/style.min.css';
+import { animated, useSpring } from '@react-spring/web';
 
 const experiences = [
   {
@@ -74,3 +74,5 @@ const Experience = () => (
     ))}
   </div>
 );
+
+export default Experience;
